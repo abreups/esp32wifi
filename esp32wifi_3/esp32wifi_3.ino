@@ -18,8 +18,8 @@ SSD1306 tela(0x3c, 4, 15);
 
 // ssid e senha da rede Wi-Fi à qual
 // você pretende se conectar.
-const char *ssid     = "ssied";
-const char *password = "sua senha wi-fi";
+const char *ssid     = "ssid da rede wifi";
+const char *password = "senha da rede wifi";
 
 void setup(){
 
@@ -61,6 +61,8 @@ void setup(){
     tela.drawString(0, 10, WiFi.SSID());
     // mostra o endereço IP recebido
     tela.drawString(0, 20, WiFi.localIP().toString());
+    // mostra o endereço MAC da placa
+    tela.drawString(0, 30, WiFi.macAddress());
     tela.display(); // mostra o texto preparado no display
   }
 }
